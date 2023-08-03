@@ -12,26 +12,16 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  // currentUser$ : Observable<User | null> = of(null); // $ means observerble // of - observable of null 
 
   constructor(public accountService:AccountService, private router: Router, 
       private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    //this.currentUser$ = this.accountService.currentUser$;
   }
-
-  // getCurrentUser(){
-  //   this.accountService.currentUser$.subscribe({
-  //     next: user => this.loggedIn = !!user, // !! return boolen if user object has value or null  
-  //     error: error => console.log(error)
-  //   })
-  // }
 
   login() {
     this.accountService.login(this.model).subscribe({
-       next: () => this.router.navigateByUrl('/members'),
-       error: error => this.toastr.error(error.error)
+       next: () => this.router.navigateByUrl('/members')
     })
   }
 
