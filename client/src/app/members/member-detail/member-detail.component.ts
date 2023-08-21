@@ -11,11 +11,11 @@ import { MembersService } from 'src/app/_services/members.service';
   standalone: true,
   templateUrl: './member-detail.component.html',
   styleUrls: ['./member-detail.component.css'],
-  imports: [CommonModule, TabsModule, /*GalleryModule*/]
+  imports: [CommonModule, TabsModule, /* GalleryModule */]
 })
 export class MemberDetailComponent implements OnInit {
   member: Member | undefined;
-  //images: GalleryItem[] = [];
+ // images: GalleryItem[] = [];
 
   constructor(private memberService: MembersService, private route: ActivatedRoute) { }
 
@@ -38,7 +38,7 @@ export class MemberDetailComponent implements OnInit {
   getImages() {
     if(!this.member) return;
     for (const photo of this.member?.photos) {
-     // this.images.push(new ImageItem({src: photo.url, thumb: photo.url}))
+      //this.images.push(new ImageItem({src: photo.url, thumb: photo.url}))
     }
   }
 
