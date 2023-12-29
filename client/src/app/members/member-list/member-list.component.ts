@@ -43,7 +43,7 @@ export class MemberListComponent implements OnInit {
       next: (response) => {
         if (response.result && response.pagination) {
           this.members = response.result;
-          this.paginationX = response.pagination;
+          this.pagination = response.pagination;
         }
       },
       error: (err: any) => {
